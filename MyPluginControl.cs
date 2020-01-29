@@ -124,29 +124,43 @@ namespace Field_Seeker
                                         resultsTree.Nodes[parent.Index].Nodes.Add("Type: " + att.AttributeType.Value.ToString());
 
                                         //Add FieldType
-                                        int fieldtype = att.SourceType.Value;
-                                        string fieldtype_label = "Simple";
-                                        if(fieldtype == 0)
+                                        if(att.SourceType != null)
                                         {
-                                            fieldtype_label = "Simple";
-                                        } else if (fieldtype == 1)
-                                        {
-                                            fieldtype_label = "Calculated";
-                                        } else if (fieldtype == 2)
-                                        {
-                                            fieldtype_label = "Rollup";
+                                            int fieldtype = att.SourceType.Value;
+                                            string fieldtype_label = "Simple";
+                                            if (fieldtype == 0)
+                                            {
+                                                fieldtype_label = "Simple";
+                                            }
+                                            else if (fieldtype == 1)
+                                            {
+                                                fieldtype_label = "Calculated";
+                                            }
+                                            else if (fieldtype == 2)
+                                            {
+                                                fieldtype_label = "Rollup";
+                                            }
+                                            resultsTree.Nodes[parent.Index].Nodes.Add("Field Type: " + fieldtype_label);
                                         }
-                                        resultsTree.Nodes[parent.Index].Nodes.Add("Field Type: " + fieldtype_label);
-
+                                        
                                         //Add RequiredLevel
-                                        resultsTree.Nodes[parent.Index].Nodes.Add("Field Requirement: " + att.RequiredLevel.Value.ToString());
+                                        if(att.RequiredLevel != null)
+                                        {
+                                            resultsTree.Nodes[parent.Index].Nodes.Add("Field Requirement: " + att.RequiredLevel.Value.ToString());
+                                        }                                        
 
                                         //Add FieldSecurity
-                                        resultsTree.Nodes[parent.Index].Nodes.Add("Field Security: " + att.IsSecured.Value.ToString());
+                                        if(att.IsSecured != null)
+                                        {
+                                            resultsTree.Nodes[parent.Index].Nodes.Add("Field Security: " + att.IsSecured.Value.ToString());
+                                        }                                        
 
                                         //Add AuditStatus
-                                        resultsTree.Nodes[parent.Index].Nodes.Add("Audit Status: " + att.IsAuditEnabled.Value.ToString());
-
+                                        if(att.IsAuditEnabled != null)
+                                        {
+                                            resultsTree.Nodes[parent.Index].Nodes.Add("Audit Status: " + att.IsAuditEnabled.Value.ToString());
+                                        }
+                                        
                                         //Count up for an attribute
                                         counter++;
                                     }
