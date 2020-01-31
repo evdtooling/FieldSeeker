@@ -49,7 +49,7 @@
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStripMenu.Size = new System.Drawing.Size(1185, 31);
+            this.toolStripMenu.Size = new System.Drawing.Size(1472, 27);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -57,20 +57,20 @@
             // 
             this.tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(107, 28);
+            this.tsbClose.Size = new System.Drawing.Size(107, 24);
             this.tsbClose.Text = "Close this tool";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // tssSeparator1
             // 
             this.tssSeparator1.Name = "tssSeparator1";
-            this.tssSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.tssSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // searchField
             // 
             this.searchField.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.searchField.Name = "searchField";
-            this.searchField.Size = new System.Drawing.Size(93, 28);
+            this.searchField.Size = new System.Drawing.Size(93, 24);
             this.searchField.Text = "Search Field";
             this.searchField.ToolTipText = "Search field in all entities.";
             this.searchField.Click += new System.EventHandler(this.searchField_Click);
@@ -104,7 +104,7 @@
             // 
             this.resultsTree.Location = new System.Drawing.Point(153, 61);
             this.resultsTree.Name = "resultsTree";
-            this.resultsTree.Size = new System.Drawing.Size(357, 753);
+            this.resultsTree.Size = new System.Drawing.Size(811, 753);
             this.resultsTree.TabIndex = 9;
             // 
             // MyPluginControl
@@ -118,7 +118,7 @@
             this.Controls.Add(this.toolStripMenu);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyPluginControl";
-            this.Size = new System.Drawing.Size(1185, 835);
+            this.Size = new System.Drawing.Size(1472, 835);
             this.Load += new System.EventHandler(this.MyPluginControl_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();

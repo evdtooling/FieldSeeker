@@ -106,10 +106,15 @@ namespace Field_Seeker
                             //Create an entitycounter and retrieve the EntityMetadata
                             int counter = 0;
                             var entities = result.EntityMetadata;
+
+                            //OrderBy LogicalName
+                            var entities_list = entities.ToList();
+                            entities_list.Sort((x, y) => x.LogicalName.CompareTo(y.LogicalName));
+
                             //Clear the TreeView before refill
                             resultsTree.Nodes.Clear();
 
-                            foreach (var entity in entities)
+                            foreach (var entity in entities_list)
                             {
                                 string entityname = entity.SchemaName.ToLower();
                                 foreach (AttributeMetadata att in entity.Attributes)
@@ -118,7 +123,7 @@ namespace Field_Seeker
                                     if (attributename == fieldname)
                                     {
                                         //Add the Entity the TreeView
-                                        TreeNode parent = resultsTree.Nodes.Add(entityname);
+                                        TreeNode parent = resultsTree.Nodes.Add(entityname + " - " + entity.DisplayName.UserLocalizedLabel.Label);
 
                                         //Add Type
                                         resultsTree.Nodes[parent.Index].Nodes.Add("Type: " + att.AttributeType.Value.ToString());
